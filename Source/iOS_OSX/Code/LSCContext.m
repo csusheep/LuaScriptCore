@@ -76,11 +76,11 @@ static NSString *const LSCCacheLuaExceptionHandlerName = @"__catchExcepitonHandl
 
 - (void)dealloc
 {
-    //由于LSCSession在销毁前会进行一次GC，但是在该情况下lua_State已经被close。
-    //因此，解决方法是保留state对象，然后先销毁session，在进行close
-    lua_State *state = self.mainSession.state;
-    self.mainSession = nil;
-    [LSCEngineAdapter close:state];
+//    //由于LSCSession在销毁前会进行一次GC，但是在该情况下lua_State已经被close。
+//    //因此，解决方法是保留state对象，然后先销毁session，在进行close
+//    lua_State *state = self.mainSession.state;
+//    self.mainSession = nil;
+//    [LSCEngineAdapter close:state];
 }
 
 - (LSCSession *)currentSession
